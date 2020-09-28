@@ -1,0 +1,16 @@
+server:
+  port: 8000
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: cloud-config
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+      config:
+        file-extension: yml
+        group: DEFAULT_GROUP
+        prefix: ${spring.application.name}
